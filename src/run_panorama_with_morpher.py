@@ -42,17 +42,40 @@ def main(application,target_function, cluster_algo, no_clusters,C1_init_, C2_ini
 
 ##############################################################################################################################################
   print('\nRunning Morpher_DFG_Generator\n')
-  os.chdir(DFG_GEN_KERNEL)
+  #ERROR :- os.chdir(DFG_GEN_KERNEL)
+  
+  #FIX 1:
+  os.chdir(DFG_GEN_HOME)
 
   print('\nGenerating DFG\n')
   if application =='idctrows' or application =='idctcols' or application =='kmeans' or application =='cordic' :#manually edited for removing a false dependency
     pass
   else:
-    os.system('./run_pass.sh %s' % target_function)
-  # os.system('dot -Tpdf *_PartPredDFG.dot -o PartPredDFG.pdf')
-  os.system('cp DFG_forclustering.xml '+RESULTS_PWD)
-  os.system('cp DFG.xml '+ RESULTS_PWD)
+    #ERROR :- os.system('./run_pass.sh %s' % target_function)
+   
+    # FIX 2: Correct the path to point to your benchmark file
+      # The run_pass.sh script expects: [path_to_c_file] [function_name]
+      benchmark_path = 'benchmarks/morpher_benchmarks/' + application + '/' + application
+      
+      os.system('./run_pass.sh %s %s' % (benchmark_path, target_function))
+      
+      #USE THE FIXED XML FILE :-
+      mapper_xml = application + '_PartPredDFG_mapper_ready.xml'
+  cluster_xml = application + '_PartPredDFG_cluster_ready.xml'
 
+  if os.path.exists(mapper_xml) and os.path.exists(cluster_xml):
+      # Use the CLUSTER-READY file for the clustering step
+      os.system('cp ' + cluster_xml + ' ' + RESULTS_PWD + 'DFG_forclustering.xml')
+      # Use the MAPPER-READY file for the final mapping step
+      os.system('cp ' + mapper_xml + ' ' + RESULTS_PWD + 'DFG.xml')
+  else:
+      print("Error: Fixed XML files were not generated!")
+      sys.exit(1)
+ #-----------old code of copy---------------------- 
+  # os.system('dot -Tpdf *_PartPredDFG.dot -o PartPredDFG.pdf')
+  #os.system('cp DFG_forclustering.xml '+RESULTS_PWD)
+  #os.system('cp DFG.xml '+ RESULTS_PWD)
+#------------old code-------------------------------
 
 ##############################################################################################################################################
 
@@ -73,7 +96,7 @@ def main(application,target_function, cluster_algo, no_clusters,C1_init_, C2_ini
   os.chdir(RESULTS_PWD)
   start = time.time()
 
-  os.system(MAPPER_HOME+'/build_hierarchical_spr/src/cgra_xml_mapper -m %s -d DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt &' % (maxIter,MAPPER_HOME+'/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,RESULTS_PWD+'../'+summary_log, entry_id, initII, maxIterTime, RESULTS_PWD+'compact_summary.log'))
+  os.system(MAPPER_HOME+'/build/src/cgra_xml_mapper -m %s -d DFG.xml -j %s -s %s -l %s -u %s -a %s -i %s -w %s -v %s > log.txt ' % (maxIter,MAPPER_HOME+'/json_arch/clustered_archs/'+arch_desc, skip_inter_or_intra, open_set_limit,RESULTS_PWD+'../'+summary_log, entry_id, initII, maxIterTime, RESULTS_PWD+'compact_summary.log'))
   os.system('neato -Tpdf arch_allconnections.dot -o %s.pdf' % (arch_desc))
   os.system('neato -Tpdf arch_interclusterconnections.dot -o %s_interclusterconnections.pdf' % (arch_desc))
 

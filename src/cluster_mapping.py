@@ -126,7 +126,8 @@ def main(C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c):
             
                 # Create a new model
                 m = gp.Model("mip1"+str(C1_init)+str(C2_init))
-                
+                #EDITED !!!!!!!!!!!!!
+                #m.Params.TimeLimit = 300
                 v =[]
                 cl_dfg = []
                 for i in range(0,num_cluster_nodes):

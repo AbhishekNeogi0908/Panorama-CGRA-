@@ -1,0 +1,190 @@
+4
+4
+Number of cluster nodes: 4
+Number of cluster edges: 4
+DFG nodes in each cluster:
+0 5
+1 4
+2 7
+3 5
+Number of dfg nodes: 21
+Number of cgra clusters: 4
+Number of dfg nodes per cgra cluster: 5
+Set parameter Username
+Set parameter LicenseID to value 2757208
+Academic license - for non-commercial use only - expires 2026-12-21
+Objective 9: -10.0 + 5.0 v0 + 4.0 v1 + 7.0 v2 + 5.0 v3
+initial constr
+[]
+Node ID: 0
+[]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 1
+[2, 1]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 2
+[0, 2, 3, 2]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Constraint 12: <gurobi.TempConstr: v0 + v2 + v3 + v2 <= 1.0 + 100000.0 v2>
+Constraint 13: <gurobi.TempConstr: v0 + v2 + v3 + v2 >= -99997.0 + 100000.0 v2>
+
+Node ID: 3
+[0, 3]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 4 rows, 5 columns and 16 nonzeros
+Model fingerprint: 0x29358291
+Variable types: 1 continuous, 4 integer (4 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+05]
+Found heuristic solution: objective 10.0000000
+Presolve removed 0 rows and 1 columns
+Presolve time: 0.00s
+Presolved: 4 rows, 4 columns, 12 nonzeros
+Variable types: 0 continuous, 4 integer (2 binary)
+Found heuristic solution: objective 9.0000000
+
+Root relaxation: objective 1.000000e+00, 2 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0       1.0000000    1.00000  0.00%     -    0s
+
+Explored 1 nodes (2 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 1 9 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%
+Found a solution at C1,C2  :  1 1
+v0 1
+0
+v1 1
+1
+v2 -0
+v3 0
+x_ 1
+Obj: 1
+Constraint List: [<gurobi.Constr R0>, <gurobi.Constr R1>, <gurobi.Constr R2>, <gurobi.Constr R3>]
+Number of Constraints: 4
+Objective 9: -10.0 + 7.0 v2 + 5.0 v3
+initial constr
+[]
+Node ID: 0
+Node ID: 1
+Node ID: 2
+[3, 2]
+[<gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 3
+[]
+[<gurobi.Var v2>, <gurobi.Var v3>]
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 2 rows, 3 columns and 6 nonzeros
+Model fingerprint: 0x9ea901de
+Variable types: 1 continuous, 2 integer (2 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 1e+01]
+Found heuristic solution: objective 10.0000000
+Presolve removed 2 rows and 3 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 2 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+00, best bound 2.000000000000e+00, gap 0.0000%
+Found a solution at C1,C2  :  1 1
+v2 1
+2
+v3 1
+3
+x_ 2
+Obj: 2
+Constraint List: [<gurobi.Constr R0>, <gurobi.Constr R1>]
+Number of Constraints: 2
+node,row 0 0
+node,row 1 0
+node,row 2 1
+node,row 3 1
+Objective 14: v11 + -1.0 v21 + 2.0 v12 + -2.0 v22 + v21 + -1.0 v01 + 2.0 v22 + -2.0 v02 + v21 + -1.0 v31 + 2.0 v22 + -2.0 v32 + v31 + -1.0 v01 + 2.0 v32 + -2.0 v02
+how many cgra clusters one node should map?
+Constraint 15: <gurobi.TempConstr: v01 + v02 == 1>
+Constraint 15: <gurobi.TempConstr: v11 + v12 == 1>
+Constraint 15: <gurobi.TempConstr: v21 + v22 == 2>
+Constraint 15: <gurobi.TempConstr: v31 + v32 == 1>
+how many nodes one cgra cluster can have?
+Constraint 16: <gurobi.TempConstr: v01 + v11 >= 1>
+Constraint 16: <gurobi.TempConstr: v21 + v31 >= 1>
+Constraint 16: <gurobi.TempConstr: v02 + v12 >= 1>
+Constraint 16: <gurobi.TempConstr: v22 + v32 >= 1>
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 10 rows, 9 columns and 30 nonzeros
+Model fingerprint: 0x525743d8
+Variable types: 1 continuous, 8 integer (8 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+00]
+Presolve removed 10 rows and 9 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+m.status: 2
+Obj: 0
+<gurobi.Var v01 (value 0.0)> 0.0
+<gurobi.Var v02 (value 1.0)> 1.0
+<gurobi.Var v11 (value 1.0)> 1.0
+<gurobi.Var v12 (value 0.0)> 0.0
+<gurobi.Var v21 (value 1.0)> 1.0
+<gurobi.Var v22 (value 1.0)> 1.0
+<gurobi.Var v31 (value 0.0)> 0.0
+<gurobi.Var v32 (value 1.0)> 1.0
+node: (row,col) 0 0 2
+node: (row,col) 1 0 1
+node: (row,col) 2 1 2
+node: (row,col) 3 1 2
+[1]	[0]	
+[2]	[2, 3]	
+DFG nodes in each cluster:
+0 5
+1 4
+2 7
+3 5
+(C1_init,C2_init): 1 1
+DFG cluster to CGRA cluster Mapping:
+Cluster ID	[Rows]	[Cols]
+0	[0]	[1]
+1	[0]	[0]
+2	[1, 1]	[0, 1]
+3	[1]	[1]

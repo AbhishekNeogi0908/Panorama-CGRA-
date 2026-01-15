@@ -82,7 +82,7 @@ def main(dfg_xml, no_clusters, affinity_):
     print(DFG.number_of_nodes())
     
     #Create adjacency matrix of DFG
-    adj_mat_dfg = nx.to_numpy_matrix(DFG)
+    adj_mat_dfg = nx.to_numpy_array(DFG)
 
     print('no_clusters affinity')
     print(no_clusters, affinity_)
@@ -95,7 +95,7 @@ def main(dfg_xml, no_clusters, affinity_):
     #scdfg = AgglomerativeClustering(7, affinity='precomputed', linkage='average')
     #https://stackoverflow.com/questions/46258657/spectral-clustering-a-graph-in-python
     #https://ptrckprry.com/course/ssd/lecture/community.html
-    scdfg.fit(adj_mat_dfg)
+    scdfg.fit(np.asarray(adj_mat_dfg))
     node_list = list(DFG)
     nodeid_clusterlabel_dict = {}
     cluster_ids = []
