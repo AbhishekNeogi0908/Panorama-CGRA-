@@ -99,8 +99,7 @@ Total execution time   = (k-1)*II + L
 			= 88 cycles 
 
 -------------------------------------------------------------------------------
-6)MatrixVectorMultiply :- CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
-
+6)MatrixVectorMultiply :- DONE :- Declare the result array within the function and not in function argument
 
 void MatrixVectorMultiply(int num_filters,int result[MAX_NUM_FILTERS]) {
      for (int j = 0; j < num_filters; ++j) {
@@ -130,8 +129,7 @@ Total execution time   = (k-1)*II + L
 			= 90 cycles 
 ------------------------------------------------------------------------			
 			
-8)FullyConnected :- Module.cpp:517: CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
-
+8)FullyConnected :- 
 -----------------
 void FullyConnected(
      const int input_offset, const int filter_offset, const int output_offset,
@@ -167,7 +165,7 @@ void FullyConnected(
 
  }
 
-9)PortableMatrixScalarAccumulate :- Module.cpp:517: CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
+9)PortableMatrixScalarAccumulate :- Done
 ---------------------------------
  void PortableMatrixScalarMultiplyAccumulate(
                                              int scalar, int n_row,
@@ -182,8 +180,7 @@ void FullyConnected(
      }
  }
 
-10)Matmul :- Module.cpp:517: CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
-
+10)Matmul :- Done
 ----------
 void MatMul(const int lhs_rows, const int lhs_cols,
              const int rhs_rows, const int rhs_cols,
