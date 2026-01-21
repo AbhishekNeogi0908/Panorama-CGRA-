@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<DFG count=" 10">
+<Node idx=" 4" ASAP=" 0" ALAP=" 0" BB="" CONST=" 4094">
+<OP>LOADB</OP>
+<BasePointerName size=" 1">loopstart</BasePointerName>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 5" nextiter=" 0" NPB=" 0" type=" P"/>
+	<Output idx=" 9" nextiter=" 0" NPB=" 0" type=" P"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 5" ASAP=" 1" ALAP=" 1" BB=" _0_0" CONST=" 0">
+<OP>CMERGE</OP>
+<Inputs>
+	<Input idx=" 4"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 0" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 0" ASAP=" 2" ALAP=" 2" BB="">
+<OP>SELECT</OP>
+<Inputs>
+	<Input idx=" 5"/>
+	<Input idx=" 6"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 1" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 1" ASAP=" 3" ALAP=" 3" BB="" CONST=" 1">
+<OP>ADD</OP>
+<Inputs>
+	<Input idx=" 0"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 2" nextiter=" 0" type=" I1"/>
+	<Output idx=" 6" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 2" ASAP=" 4" ALAP=" 4" BB="" CONST=" 8">
+<OP>CMP</OP>
+<Inputs>
+	<Input idx=" 1"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 6" nextiter=" 0" NPB=" 1" type=" P"/>
+	<Output idx=" 20007" nextiter=" 0" NPB=" 0" type=" P"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 20008" ASAP=" 0" ALAP=" 4" BB="" CONST=" 1">
+<OP>MOVC</OP>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 20007" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 10" ASAP=" 0" ALAP=" 4" BB="" CONST=" 0">
+<OP>MOVC</OP>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 9" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 6" ASAP=" 5" ALAP=" 5" BB=" _0_1">
+<OP>CMERGE</OP>
+<Inputs>
+	<Input idx=" 2"/>
+	<Input idx=" 1"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 0" nextiter=" 1" type=" I2"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 20007" ASAP=" 5" ALAP=" 5" BB="" CONST=" 2047">
+<OP>STOREB</OP>
+<BasePointerName size=" 1">loopend</BasePointerName>
+<Inputs>
+	<Input idx=" 20008"/>
+	<Input idx=" 2"/>
+</Inputs>
+<Outputs>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 9" ASAP=" 1" ALAP=" 5" BB="" CONST=" 4094">
+<OP>STOREB</OP>
+<BasePointerName size=" 1">loopstart</BasePointerName>
+<Inputs>
+	<Input idx=" 4"/>
+	<Input idx=" 10"/>
+</Inputs>
+<Outputs>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+</DFG>

@@ -1,0 +1,142 @@
+<MutexBB>
+</MutexBB>
+<DFG count=" 11">
+<Node idx=" 6" ASAP=" 0" ALAP=" 0" BB=".preheader.preheader" CONST=" 4094">
+<OP>LOADB</OP>
+<BasePointerName size=" 1">loopstart</BasePointerName>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 7" nextiter=" 0" NPB=" 0" type=" P"/>
+	<Output idx=" 10" nextiter=" 0" NPB=" 0" type=" P"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 7" ASAP=" 1" ALAP=" 1" BB=".preheader_0_1" CONST=" 0">
+<OP>CMERGE</OP>
+<Inputs>
+	<Input idx=" 6"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 0" nextiter=" 0" type=" I2"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 0" ASAP=" 2" ALAP=" 2" BB=".preheader">
+<OP>SELECT</OP>
+<Inputs>
+	<Input idx=" 5"/>
+	<Input idx=" 7"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 1" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 1" ASAP=" 3" ALAP=" 3" BB=".preheader" CONST=" 1">
+<OP>ADD</OP>
+<Inputs>
+	<Input idx=" 0"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 2" nextiter=" 0" type=" I1"/>
+	<Output idx=" 5" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 3" ASAP=" 0" ALAP=" 3" BB=".preheader" CONST=" 0">
+<OP>OLOAD</OP>
+<BasePointerName size=" 4"></BasePointerName>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 2" nextiter=" 0" type=" I2"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 2" ASAP=" 4" ALAP=" 4" BB=".preheader">
+<OP>CMP</OP>
+<Inputs>
+	<Input idx=" 3"/>
+	<Input idx=" 1"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 5" nextiter=" 0" NPB=" 1" type=" P"/>
+	<Output idx=" 20008" nextiter=" 0" NPB=" 0" type=" P"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 20009" ASAP=" 0" ALAP=" 4" BB=".loopexit.loopexit" CONST=" 1">
+<OP>MOVC</OP>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 20008" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 11" ASAP=" 0" ALAP=" 4" BB=".preheader.preheader" CONST=" 0">
+<OP>MOVC</OP>
+<Inputs>
+</Inputs>
+<Outputs>
+	<Output idx=" 10" nextiter=" 0" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 5" ASAP=" 5" ALAP=" 5" BB=".preheader_0_0">
+<OP>CMERGE</OP>
+<Inputs>
+	<Input idx=" 2"/>
+	<Input idx=" 1"/>
+</Inputs>
+<Outputs>
+	<Output idx=" 0" nextiter=" 1" type=" I1"/>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 20008" ASAP=" 5" ALAP=" 5" BB=".loopexit.loopexit" CONST=" 2047">
+<OP>STOREB</OP>
+<BasePointerName size=" 1">loopend</BasePointerName>
+<Inputs>
+	<Input idx=" 20009"/>
+	<Input idx=" 2"/>
+</Inputs>
+<Outputs>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+<Node idx=" 10" ASAP=" 1" ALAP=" 5" BB=".preheader.preheader" CONST=" 4094">
+<OP>STOREB</OP>
+<BasePointerName size=" 1">loopstart</BasePointerName>
+<Inputs>
+	<Input idx=" 6"/>
+	<Input idx=" 11"/>
+</Inputs>
+<Outputs>
+</Outputs>
+<RecParents>
+</RecParents>
+</Node>
+
+</DFG>

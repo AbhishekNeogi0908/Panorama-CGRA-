@@ -1,0 +1,29 @@
+numbher of cycles needed to execute the whole kernal.
+
+Nested lops: 
+-> inner loop is fine, we are able to map it into CGRA :- My work.
+-> Now we need outer loop execution cycles.
+	-> Either get the number of cycles outer loop takes to run on CPU or any some kind of data (suggested)//(formula , or latency and II)
+		->
+	-> Or we must find a way to find the latency of the outer loop
+
+
+how to find the latency of outer loop?
+-> inner loop cycles * number of outer loop itterations + (number of itteration * latency of outer loop without inner loop) 
+
+something freq. or anything liek latency or time for the outer loop -> Time / freq => number of cycles
+
+
+
+IMPORTANT things to study :- 
+
+Modulo scheduling
+
+For handling if else cases :- partial predication & full predication
+
+High level synthesis :- c code to FPGA mapping
+
+Books : Reconfigurable computing by andre dehon & scott houck
+Books : Embedded computing for high performance by cardoso
+
+
