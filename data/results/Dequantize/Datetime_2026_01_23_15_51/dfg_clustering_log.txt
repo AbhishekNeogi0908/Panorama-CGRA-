@@ -1,0 +1,23 @@
+21
+no_clusters affinity
+4 precomputed
+spectral dfg clustering
+0:5
+1:4
+2:7
+3:5
+determine recurrence cycles
+[]
+Connected components
+Modify the cluster id of nodes in recurrence cycles
+
+
+{' 14': 1, ' 15': 1, ' 20': 1, ' 0': 2, ' 1': 2, ' 16': 0, ' 17': 3, ' 7': 3, ' 8': 3, ' 9': 3, ' 10': 3, ' 2': 2, ' 13': 2, ' 3': 2, ' 5': 0, ' 11': 0, ' 12': 0, ' 21': 1, ' 20019': 2, ' 20018': 2, ' 6': 0}
+Total edges: 23
+Inter cluster edges: 4
+Total nodes: 21
+Number of nodes in each cluster:
+0 5 23.809523809523807
+1 4 19.047619047619047
+2 7 33.33333333333333
+3 5 23.809523809523807

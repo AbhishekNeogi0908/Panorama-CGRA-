@@ -1,0 +1,3543 @@
+!!!Hello World!!!
+xmlParse :: node iteration...
+i=0,,idx= 11,,op=LOADB
+i=1,,idx= 12,,op=CMERGE
+i=2,,idx= 0,,op=SELECT
+i=3,,idx= 17,,op=LS
+i=4,,idx= 6,,op=ADD
+i=5,,idx= 7,,op=LOAD
+i=6,,idx= 9,,op=OLOAD
+i=7,,idx= 10,,op=CLT
+i=8,,idx= 1,,op=ADD
+i=9,,idx= 16,,op=LS
+i=10,,idx= 15,,op=CMERGE
+i=11,,idx= 14,,op=CMERGE
+i=12,,idx= 8,,op=SELECT
+i=13,,idx= 4,,op=ADD
+i=14,,idx= 2,,op=CMP
+i=15,,idx= 20019,,op=MOVC
+i=16,,idx= 21,,op=MOVC
+i=17,,idx= 13,,op=CMERGE
+i=18,,idx= 5,,op=STORE
+i=19,,idx= 20018,,op=STOREB
+i=20,,idx= 20,,op=STOREB
+NODELIST SIZE = 21
+Parsing Connections...
+idx=11|Inputs=|Outputs=12,nextiter = 020,nextiter = 0|RecParents=
+idx=12|Inputs=11,|Outputs=0,nextiter = 0|RecParents=
+idx=0|Inputs=12,13,|Outputs=1,nextiter = 016,nextiter = 017,nextiter = 0|RecParents=
+idx=17|Inputs=0,|Outputs=6,nextiter = 0|RecParents=
+idx=6|Inputs=17,|Outputs=7,nextiter = 0|RecParents=
+idx=7|Inputs=6,|Outputs=10,nextiter = 015,nextiter = 0|RecParents=
+idx=9|Inputs=|Outputs=10,nextiter = 014,nextiter = 0|RecParents=
+idx=10|Inputs=9,7,|Outputs=14,nextiter = 015,nextiter = 0|RecParents=
+idx=1|Inputs=0,|Outputs=2,nextiter = 013,nextiter = 0|RecParents=
+idx=16|Inputs=0,|Outputs=4,nextiter = 0|RecParents=
+idx=15|Inputs=10,7,|Outputs=8,nextiter = 0|RecParents=
+idx=14|Inputs=10,9,|Outputs=8,nextiter = 0|RecParents=
+idx=8|Inputs=14,15,|Outputs=5,nextiter = 0|RecParents=
+idx=4|Inputs=16,|Outputs=5,nextiter = 0|RecParents=
+idx=2|Inputs=1,|Outputs=13,nextiter = 020018,nextiter = 0|RecParents=
+idx=20019|Inputs=|Outputs=20018,nextiter = 0|RecParents=
+idx=21|Inputs=|Outputs=20,nextiter = 0|RecParents=
+idx=13|Inputs=2,1,|Outputs=0,nextiter = 1|RecParents=
+idx=5|Inputs=4,8,|Outputs=|RecParents=
+idx=20018|Inputs=20019,2,|Outputs=|RecParents=
+idx=20|Inputs=11,21,|Outputs=|RecParents=
+Printing DFG...
+idx=11,OP=LOADB|Parents=|Children=12,20,
+idx=12,OP=CMERGE|Parents=11,|Children=0,
+idx=0,OP=SELECT|Parents=12,13,|Children=1,16,17,
+idx=17,OP=LS|Parents=0,|Children=6,
+idx=6,OP=ADD|Parents=17,|Children=7,
+idx=7,OP=LOAD|Parents=6,|Children=10,15,
+idx=9,OP=OLOAD|Parents=|Children=10,14,
+idx=10,OP=CLT|Parents=9,7,|Children=14,15,
+idx=1,OP=ADD|Parents=0,|Children=2,13,
+idx=16,OP=LS|Parents=0,|Children=4,
+idx=15,OP=CMERGE|Parents=10,7,|Children=8,
+idx=14,OP=CMERGE|Parents=10,9,|Children=8,
+idx=8,OP=SELECT|Parents=14,15,|Children=5,
+idx=4,OP=ADD|Parents=16,|Children=5,
+idx=2,OP=CMP|Parents=1,|Children=13,20018,
+idx=20019,OP=MOVC|Parents=|Children=20018,
+idx=21,OP=MOVC|Parents=|Children=20,
+idx=13,OP=CMERGE|Parents=2,1,|Children=0,
+idx=5,OP=STORE|Parents=4,8,|Children=
+idx=20018,OP=STOREB|Parents=20019,2,|Children=
+idx=20,OP=STOREB|Parents=11,21,|Children=
+Printing DFG Done!
+cgra_json_name = stdnoc_2x2tiles_2x2PEs.json
+filename_extention = .json
+Before JSON Begin :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Before JSON Enddd :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+fromx = 0,fromy = 0,tox = 0,toy = -1
+fromx = 0,fromy = 0,tox = 1,toy = 0
+fromx = 0,fromy = 0,tox = -1,toy = 0
+fromx = 0,fromy = 0,tox = 0,toy = 1
+fromx = 0,fromy = 0,tox = 0,toy = -1
+fromx = 0,fromy = 0,tox = 1,toy = 0
+fromx = 0,fromy = 0,tox = -1,toy = 0
+fromx = 0,fromy = 0,tox = 0,toy = 1
+After JSON Begin :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After JSON End :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TOP_ARCH :: begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+    "ARCH": {
+        "CGRA": {
+            "CONNECTIONS": {
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_CLSTR_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_CLSTR_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_CLSTR_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_CLSTR_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_CLSTR_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_CLSTR_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_CLSTR_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_CLSTR_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.EAST_I"
+                ]
+            },
+            "ISOCKETS": null,
+            "SOCKETS": null,
+            "SUBMODS": {
+                "PE_MEM": [
+                    {
+                        "X": 0,
+                        "Y": 0,
+                        "name": "TILE_X0|_Y0|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 1,
+                        "name": "TILE_X0|_Y0|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 0,
+                        "name": "TILE_X1|_Y0|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 1,
+                        "name": "TILE_X1|_Y0|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 2,
+                        "name": "TILE_X0|_Y1|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 3,
+                        "name": "TILE_X0|_Y1|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 2,
+                        "name": "TILE_X1|_Y1|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 3,
+                        "name": "TILE_X1|_Y1|_PE_MEM_X0|_Y1|"
+                    }
+                ],
+                "PE_R1": [
+                    {
+                        "X": 1,
+                        "Y": 0,
+                        "name": "TILE_X0|_Y0|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 0,
+                        "name": "TILE_X1|_Y0|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 1,
+                        "Y": 2,
+                        "name": "TILE_X0|_Y1|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 2,
+                        "name": "TILE_X1|_Y1|_PE_R1_X1|_Y0|"
+                    }
+                ],
+                "PE_R2": [
+                    {
+                        "X": 1,
+                        "Y": 1,
+                        "name": "TILE_X0|_Y0|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 1,
+                        "name": "TILE_X1|_Y0|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 1,
+                        "Y": 3,
+                        "name": "TILE_X0|_Y1|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 3,
+                        "name": "TILE_X1|_Y1|_PE_R2_X1|_Y1|"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "DP": {
+            "CONNECTIONS": {
+                "THIS.T_INT": [
+                    "THIS.T"
+                ]
+            },
+            "INPUTS": [
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNALS": [
+                "T_INT"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": null,
+            "TSOCKETS": null
+        },
+        "FU": {
+            "CONNECTIONS": {
+                "DP0.T": [
+                    "THIS.DP0_T"
+                ],
+                "THIS.DP0_I1": [
+                    "DP0.I1"
+                ],
+                "THIS.DP0_I2": [
+                    "DP0.I2"
+                ],
+                "THIS.DP0_P": [
+                    "DP0.P"
+                ]
+            },
+            "INPUTS": [
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OPS": {
+                "ADD": 1,
+                "AND": 1,
+                "ARS": 1,
+                "BR": 1,
+                "CGT": 1,
+                "CLT": 1,
+                "CMERGE": 1,
+                "CMP": 1,
+                "DIV": 1,
+                "JUMPL": 1,
+                "LS": 1,
+                "MOVC": 1,
+                "MOVCL": 1,
+                "MUL": 1,
+                "NOP": 1,
+                "OLOAD": 1,
+                "OLOADB": 1,
+                "OLOADCL": 1,
+                "OLOADH": 1,
+                "OR": 1,
+                "OSTORE": 1,
+                "OSTOREB": 1,
+                "OSTOREH": 1,
+                "RS": 1,
+                "SELECT": 1,
+                "SEXT": 1,
+                "SUB": 1,
+                "XOR": 1
+            },
+            "OUTPUTS": [
+                "DP0_T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "DP": [
+                    {
+                        "name": "DP0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "FU_MEM": {
+            "CONNECTIONS": {
+                "DP0.T": [
+                    "THIS.DP0_T"
+                ],
+                "THIS.DP0_I1": [
+                    "DP0.I1"
+                ],
+                "THIS.DP0_I2": [
+                    "DP0.I2"
+                ],
+                "THIS.DP0_P": [
+                    "DP0.P"
+                ]
+            },
+            "INPUTS": [
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OPS": {
+                "ADD": 2,
+                "AND": 2,
+                "ARS": 2,
+                "BR": 2,
+                "CGT": 2,
+                "CLT": 2,
+                "CMERGE": 2,
+                "CMP": 2,
+                "DIV": 2,
+                "JUMPL": 2,
+                "LOAD": 2,
+                "LOADB": 2,
+                "LOADCL": 2,
+                "LOADH": 2,
+                "LS": 2,
+                "MOVC": 2,
+                "MOVCL": 2,
+                "MUL": 2,
+                "NOP": 2,
+                "OLOAD": 2,
+                "OLOADB": 2,
+                "OLOADCL": 2,
+                "OLOADH": 2,
+                "OR": 2,
+                "OSTORE": 2,
+                "OSTOREB": 2,
+                "OSTOREH": 2,
+                "RS": 2,
+                "SELECT": 2,
+                "SEXT": 2,
+                "STORE": 2,
+                "STOREB": 2,
+                "STOREH": 2,
+                "SUB": 2,
+                "XOR": 2
+            },
+            "OUTPUTS": [
+                "DP0_T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "DP": [
+                    {
+                        "name": "DP0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_MEM": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU_MEM": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_R1": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "NORTH_CLSTR_I",
+                "WEST_CLSTR_I",
+                "EAST_CLSTR_I",
+                "SOUTH_CLSTR_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "NORTH_CLSTR_O",
+                "WEST_CLSTR_O",
+                "EAST_CLSTR_O",
+                "SOUTH_CLSTR_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_R2": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "NORTH_CLSTR_I",
+                "WEST_CLSTR_I",
+                "EAST_CLSTR_I",
+                "SOUTH_CLSTR_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "NORTH_CLSTR_O",
+                "WEST_CLSTR_O",
+                "EAST_CLSTR_O",
+                "SOUTH_CLSTR_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "RF": {
+            "CONNECTIONS": {
+                "THIS.R0": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R1": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R2": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R3": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.WP0": [
+                    "THIS.R0",
+                    "THIS.R1",
+                    "THIS.R2",
+                    "THIS.R3"
+                ],
+                "THIS.WP1": [
+                    "THIS.R0",
+                    "THIS.R1",
+                    "THIS.R2",
+                    "THIS.R3"
+                ]
+            },
+            "INPUTS": [
+                "WP0",
+                "WP1"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "RP0",
+                "RP1"
+            ],
+            "REGS": [
+                "R0",
+                "R1",
+                "R2",
+                "R3"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": null,
+            "TSOCKETS": null
+        }
+    }
+}
+TOP_ARCH :: end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Parse CGRA begins:
+type=el.key():PE_MEM
+type=el.key():PE_R1
+type=el.key():PE_R2
+type=el.key():PE_MEM
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R1
+name = sm[name]:TILE_X0|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+op = ADD, old lat = 2, new lat = 1
+op = AND, old lat = 2, new lat = 1
+op = ARS, old lat = 2, new lat = 1
+op = BR, old lat = 2, new lat = 1
+op = CGT, old lat = 2, new lat = 1
+op = CLT, old lat = 2, new lat = 1
+op = CMERGE, old lat = 2, new lat = 1
+op = CMP, old lat = 2, new lat = 1
+op = DIV, old lat = 2, new lat = 1
+op = JUMPL, old lat = 2, new lat = 1
+op = LS, old lat = 2, new lat = 1
+op = MOVC, old lat = 2, new lat = 1
+op = MOVCL, old lat = 2, new lat = 1
+op = MUL, old lat = 2, new lat = 1
+op = NOP, old lat = 2, new lat = 1
+op = OLOAD, old lat = 2, new lat = 1
+op = OLOADB, old lat = 2, new lat = 1
+op = OLOADCL, old lat = 2, new lat = 1
+op = OLOADH, old lat = 2, new lat = 1
+op = OR, old lat = 2, new lat = 1
+op = OSTORE, old lat = 2, new lat = 1
+op = OSTOREB, old lat = 2, new lat = 1
+op = OSTOREH, old lat = 2, new lat = 1
+op = RS, old lat = 2, new lat = 1
+op = SELECT, old lat = 2, new lat = 1
+op = SEXT, old lat = 2, new lat = 1
+op = SUB, old lat = 2, new lat = 1
+op = XOR, old lat = 2, new lat = 1
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R2
+name = sm[name]:TILE_X0|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+Parsing JSON Success!!!
+EstablishTemporalLinkage started!.
+EstablishTemporalLinkage done!.
+m1 name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0 Time Dist:1
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0 Time Dist:0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0 Time Dist:0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0 Time Dist:1
+m1 name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0 Time Dist:0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0 Time Dist:1
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0 Time Dist:1
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0 Time Dist:0
+m1 name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_MEM_X0|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0 Time Dist:0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0 Time Dist:1
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0 Time Dist:1
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0 Time Dist:0
+m1 name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R1_X1|_Y0|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0 Time Dist:1
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0 Time Dist:0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+	m2 name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0 Time Dist:0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+	m2 name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0 Time Dist:1
+m1 name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+m1 name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_MEM_X0|_Y1|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R1_X1|_Y0|-T0
+pe1_name: PE_R2_X1|_Y1|-T0 pe2_name:PE_R2_X1|_Y1|-T0
+Timing analysis between PEs done.!
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+Timing analysis between PE and closest memPE :: 
+PE=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+op=STOREH,opcount=0,dpcount=8,ratio=0,cummOp=0,cummDP=8,ratio=0
+op=STOREB,opcount=2,dpcount=8,ratio=1,cummOp=2,cummDP=8,ratio=1
+op=STORE,opcount=1,dpcount=8,ratio=1,cummOp=3,cummDP=8,ratio=1
+op=LOAD,opcount=1,dpcount=8,ratio=1,cummOp=4,cummDP=8,ratio=1
+op=LOADB,opcount=1,dpcount=8,ratio=1,cummOp=5,cummDP=8,ratio=1
+op=LOADCL,opcount=0,dpcount=8,ratio=0,cummOp=5,cummDP=8,ratio=1
+op=LOADH,opcount=0,dpcount=8,ratio=0,cummOp=5,cummDP=8,ratio=1
+op=OLOADB,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=MUL,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OLOADCL,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OLOADH,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OR,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OSTORE,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OSTOREB,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=OSTOREH,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=RS,opcount=0,dpcount=16,ratio=0,cummOp=5,cummDP=16,ratio=1
+op=SELECT,opcount=2,dpcount=16,ratio=1,cummOp=7,cummDP=16,ratio=1
+op=SEXT,opcount=0,dpcount=16,ratio=0,cummOp=7,cummDP=16,ratio=1
+op=SUB,opcount=0,dpcount=16,ratio=0,cummOp=7,cummDP=16,ratio=1
+op=XOR,opcount=0,dpcount=16,ratio=0,cummOp=7,cummDP=16,ratio=1
+op=OLOAD,opcount=1,dpcount=16,ratio=1,cummOp=8,cummDP=16,ratio=1
+op=NOP,opcount=0,dpcount=16,ratio=0,cummOp=8,cummDP=16,ratio=1
+op=ADD,opcount=3,dpcount=16,ratio=1,cummOp=11,cummDP=16,ratio=1
+op=MOVCL,opcount=0,dpcount=16,ratio=0,cummOp=11,cummDP=16,ratio=1
+op=MOVC,opcount=2,dpcount=16,ratio=1,cummOp=13,cummDP=16,ratio=1
+op=LS,opcount=2,dpcount=16,ratio=1,cummOp=15,cummDP=16,ratio=1
+op=JUMPL,opcount=0,dpcount=16,ratio=0,cummOp=15,cummDP=16,ratio=1
+op=DIV,opcount=0,dpcount=16,ratio=0,cummOp=15,cummDP=16,ratio=1
+op=CMP,opcount=1,dpcount=16,ratio=1,cummOp=16,cummDP=16,ratio=1
+op=CMERGE,opcount=4,dpcount=16,ratio=1,cummOp=20,cummDP=16,ratio=2
+op=CLT,opcount=1,dpcount=16,ratio=1,cummOp=21,cummDP=16,ratio=2
+op=CGT,opcount=0,dpcount=16,ratio=0,cummOp=21,cummDP=16,ratio=2
+op=BR,opcount=0,dpcount=16,ratio=0,cummOp=21,cummDP=16,ratio=2
+op=ARS,opcount=0,dpcount=16,ratio=0,cummOp=21,cummDP=16,ratio=2
+op=AND,opcount=0,dpcount=16,ratio=0,cummOp=21,cummDP=16,ratio=2
+Min II = 2
+Res Minimum II = 2
+Rec Minimum II = 1
+Init User II = 1
+Using II = 2
+json_file_name = /home/abhishek-hws/panorama/src/panorama_with_morpher/Morpher_CGRA_Mapper/json_arch/clustered_archs/stdnoc_2x2tiles_2x2PEs.json
+xmlParse :: node iteration...
+i=0,,idx= 11,,op=LOADB
+i=1,,idx= 12,,op=CMERGE
+i=2,,idx= 0,,op=SELECT
+i=3,,idx= 17,,op=LS
+i=4,,idx= 6,,op=ADD
+i=5,,idx= 7,,op=LOAD
+i=6,,idx= 9,,op=OLOAD
+i=7,,idx= 10,,op=CLT
+i=8,,idx= 1,,op=ADD
+i=9,,idx= 16,,op=LS
+i=10,,idx= 15,,op=CMERGE
+i=11,,idx= 14,,op=CMERGE
+i=12,,idx= 8,,op=SELECT
+i=13,,idx= 4,,op=ADD
+i=14,,idx= 2,,op=CMP
+i=15,,idx= 20019,,op=MOVC
+i=16,,idx= 21,,op=MOVC
+i=17,,idx= 13,,op=CMERGE
+i=18,,idx= 5,,op=STORE
+i=19,,idx= 20018,,op=STOREB
+i=20,,idx= 20,,op=STOREB
+NODELIST SIZE = 21
+Parsing Connections...
+idx=11|Inputs=|Outputs=12,nextiter = 020,nextiter = 0|RecParents=
+idx=12|Inputs=11,|Outputs=0,nextiter = 0|RecParents=
+idx=0|Inputs=12,13,|Outputs=1,nextiter = 016,nextiter = 017,nextiter = 0|RecParents=
+idx=17|Inputs=0,|Outputs=6,nextiter = 0|RecParents=
+idx=6|Inputs=17,|Outputs=7,nextiter = 0|RecParents=
+idx=7|Inputs=6,|Outputs=10,nextiter = 015,nextiter = 0|RecParents=
+idx=9|Inputs=|Outputs=10,nextiter = 014,nextiter = 0|RecParents=
+idx=10|Inputs=9,7,|Outputs=14,nextiter = 015,nextiter = 0|RecParents=
+idx=1|Inputs=0,|Outputs=2,nextiter = 013,nextiter = 0|RecParents=
+idx=16|Inputs=0,|Outputs=4,nextiter = 0|RecParents=
+idx=15|Inputs=10,7,|Outputs=8,nextiter = 0|RecParents=
+idx=14|Inputs=10,9,|Outputs=8,nextiter = 0|RecParents=
+idx=8|Inputs=14,15,|Outputs=5,nextiter = 0|RecParents=
+idx=4|Inputs=16,|Outputs=5,nextiter = 0|RecParents=
+idx=2|Inputs=1,|Outputs=13,nextiter = 020018,nextiter = 0|RecParents=
+idx=20019|Inputs=|Outputs=20018,nextiter = 0|RecParents=
+idx=21|Inputs=|Outputs=20,nextiter = 0|RecParents=
+idx=13|Inputs=2,1,|Outputs=0,nextiter = 1|RecParents=
+idx=5|Inputs=4,8,|Outputs=|RecParents=
+idx=20018|Inputs=20019,2,|Outputs=|RecParents=
+idx=20|Inputs=11,21,|Outputs=|RecParents=
+Printing DFG...
+idx=11,OP=LOADB|Parents=|Children=12,20,
+idx=12,OP=CMERGE|Parents=11,|Children=0,
+idx=0,OP=SELECT|Parents=12,13,|Children=1,16,17,
+idx=17,OP=LS|Parents=0,|Children=6,
+idx=6,OP=ADD|Parents=17,|Children=7,
+idx=7,OP=LOAD|Parents=6,|Children=10,15,
+idx=9,OP=OLOAD|Parents=|Children=10,14,
+idx=10,OP=CLT|Parents=9,7,|Children=14,15,
+idx=1,OP=ADD|Parents=0,|Children=2,13,
+idx=16,OP=LS|Parents=0,|Children=4,
+idx=15,OP=CMERGE|Parents=10,7,|Children=8,
+idx=14,OP=CMERGE|Parents=10,9,|Children=8,
+idx=8,OP=SELECT|Parents=14,15,|Children=5,
+idx=4,OP=ADD|Parents=16,|Children=5,
+idx=2,OP=CMP|Parents=1,|Children=13,20018,
+idx=20019,OP=MOVC|Parents=|Children=20018,
+idx=21,OP=MOVC|Parents=|Children=20,
+idx=13,OP=CMERGE|Parents=2,1,|Children=0,
+idx=5,OP=STORE|Parents=4,8,|Children=
+idx=20018,OP=STOREB|Parents=20019,2,|Children=
+idx=20,OP=STOREB|Parents=11,21,|Children=
+Printing DFG Done!
+cgra_json_name = stdnoc_2x2tiles_2x2PEs.json
+filename_extention = .json
+Before JSON Begin :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Before JSON Enddd :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+fromx = 0,fromy = 0,tox = 0,toy = -1
+fromx = 0,fromy = 0,tox = 1,toy = 0
+fromx = 0,fromy = 0,tox = -1,toy = 0
+fromx = 0,fromy = 0,tox = 0,toy = 1
+fromx = 0,fromy = 0,tox = 0,toy = -1
+fromx = 0,fromy = 0,tox = 1,toy = 0
+fromx = 0,fromy = 0,tox = -1,toy = 0
+fromx = 0,fromy = 0,tox = 0,toy = 1
+After JSON Begin :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After JSON End :: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TOP_ARCH :: begin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+    "ARCH": {
+        "CGRA": {
+            "CONNECTIONS": {
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_CLSTR_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_CLSTR_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_I"
+                ],
+                "TILE_X0|_Y0|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_MEM_X0|_Y1|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_CLSTR_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_CLSTR_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.NORTH_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.WEST_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X0|_Y1|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.WEST_O": [
+                    "TILE_X0|_Y0|_PE_R2_X1|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_CLSTR_O": [
+                    "TILE_X0|_Y0|_PE_R1_X1|_Y0|.EAST_CLSTR_I"
+                ],
+                "TILE_X1|_Y0|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_I"
+                ],
+                "TILE_X1|_Y0|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_MEM_X0|_Y1|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.EAST_O": [
+                    "TILE_X1|_Y1|_PE_R2_X1|_Y1|.WEST_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.WEST_O": [
+                    "TILE_X0|_Y1|_PE_R2_X1|_Y1|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_CLSTR_O": [
+                    "TILE_X1|_Y0|_PE_R1_X1|_Y0|.SOUTH_CLSTR_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.NORTH_O": [
+                    "TILE_X1|_Y0|_PE_R2_X1|_Y1|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.SOUTH_O": [
+                    "TILE_X1|_Y1|_PE_R2_X1|_Y1|.NORTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_CLSTR_O": [
+                    "TILE_X0|_Y1|_PE_R1_X1|_Y0|.EAST_CLSTR_I"
+                ],
+                "TILE_X1|_Y1|_PE_R1_X1|_Y0|.WEST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y0|.EAST_I"
+                ],
+                "TILE_X1|_Y1|_PE_R2_X1|_Y1|.NORTH_O": [
+                    "TILE_X1|_Y1|_PE_R1_X1|_Y0|.SOUTH_I"
+                ],
+                "TILE_X1|_Y1|_PE_R2_X1|_Y1|.WEST_O": [
+                    "TILE_X1|_Y1|_PE_MEM_X0|_Y1|.EAST_I"
+                ]
+            },
+            "ISOCKETS": null,
+            "SOCKETS": null,
+            "SUBMODS": {
+                "PE_MEM": [
+                    {
+                        "X": 0,
+                        "Y": 0,
+                        "name": "TILE_X0|_Y0|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 1,
+                        "name": "TILE_X0|_Y0|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 0,
+                        "name": "TILE_X1|_Y0|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 1,
+                        "name": "TILE_X1|_Y0|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 2,
+                        "name": "TILE_X0|_Y1|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 0,
+                        "Y": 3,
+                        "name": "TILE_X0|_Y1|_PE_MEM_X0|_Y1|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 2,
+                        "name": "TILE_X1|_Y1|_PE_MEM_X0|_Y0|"
+                    },
+                    {
+                        "X": 2,
+                        "Y": 3,
+                        "name": "TILE_X1|_Y1|_PE_MEM_X0|_Y1|"
+                    }
+                ],
+                "PE_R1": [
+                    {
+                        "X": 1,
+                        "Y": 0,
+                        "name": "TILE_X0|_Y0|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 0,
+                        "name": "TILE_X1|_Y0|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 1,
+                        "Y": 2,
+                        "name": "TILE_X0|_Y1|_PE_R1_X1|_Y0|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 2,
+                        "name": "TILE_X1|_Y1|_PE_R1_X1|_Y0|"
+                    }
+                ],
+                "PE_R2": [
+                    {
+                        "X": 1,
+                        "Y": 1,
+                        "name": "TILE_X0|_Y0|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 1,
+                        "name": "TILE_X1|_Y0|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 1,
+                        "Y": 3,
+                        "name": "TILE_X0|_Y1|_PE_R2_X1|_Y1|"
+                    },
+                    {
+                        "X": 3,
+                        "Y": 3,
+                        "name": "TILE_X1|_Y1|_PE_R2_X1|_Y1|"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "DP": {
+            "CONNECTIONS": {
+                "THIS.T_INT": [
+                    "THIS.T"
+                ]
+            },
+            "INPUTS": [
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNALS": [
+                "T_INT"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": null,
+            "TSOCKETS": null
+        },
+        "FU": {
+            "CONNECTIONS": {
+                "DP0.T": [
+                    "THIS.DP0_T"
+                ],
+                "THIS.DP0_I1": [
+                    "DP0.I1"
+                ],
+                "THIS.DP0_I2": [
+                    "DP0.I2"
+                ],
+                "THIS.DP0_P": [
+                    "DP0.P"
+                ]
+            },
+            "INPUTS": [
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OPS": {
+                "ADD": 1,
+                "AND": 1,
+                "ARS": 1,
+                "BR": 1,
+                "CGT": 1,
+                "CLT": 1,
+                "CMERGE": 1,
+                "CMP": 1,
+                "DIV": 1,
+                "JUMPL": 1,
+                "LS": 1,
+                "MOVC": 1,
+                "MOVCL": 1,
+                "MUL": 1,
+                "NOP": 1,
+                "OLOAD": 1,
+                "OLOADB": 1,
+                "OLOADCL": 1,
+                "OLOADH": 1,
+                "OR": 1,
+                "OSTORE": 1,
+                "OSTOREB": 1,
+                "OSTOREH": 1,
+                "RS": 1,
+                "SELECT": 1,
+                "SEXT": 1,
+                "SUB": 1,
+                "XOR": 1
+            },
+            "OUTPUTS": [
+                "DP0_T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "DP": [
+                    {
+                        "name": "DP0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "FU_MEM": {
+            "CONNECTIONS": {
+                "DP0.T": [
+                    "THIS.DP0_T"
+                ],
+                "THIS.DP0_I1": [
+                    "DP0.I1"
+                ],
+                "THIS.DP0_I2": [
+                    "DP0.I2"
+                ],
+                "THIS.DP0_P": [
+                    "DP0.P"
+                ]
+            },
+            "INPUTS": [
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OPS": {
+                "ADD": 2,
+                "AND": 2,
+                "ARS": 2,
+                "BR": 2,
+                "CGT": 2,
+                "CLT": 2,
+                "CMERGE": 2,
+                "CMP": 2,
+                "DIV": 2,
+                "JUMPL": 2,
+                "LOAD": 2,
+                "LOADB": 2,
+                "LOADCL": 2,
+                "LOADH": 2,
+                "LS": 2,
+                "MOVC": 2,
+                "MOVCL": 2,
+                "MUL": 2,
+                "NOP": 2,
+                "OLOAD": 2,
+                "OLOADB": 2,
+                "OLOADCL": 2,
+                "OLOADH": 2,
+                "OR": 2,
+                "OSTORE": 2,
+                "OSTOREB": 2,
+                "OSTOREH": 2,
+                "RS": 2,
+                "SELECT": 2,
+                "SEXT": 2,
+                "STORE": 2,
+                "STOREB": 2,
+                "STOREH": 2,
+                "SUB": 2,
+                "XOR": 2
+            },
+            "OUTPUTS": [
+                "DP0_T"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "DP": [
+                    {
+                        "name": "DP0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_MEM": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU_MEM": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_R1": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "NORTH_CLSTR_I",
+                "WEST_CLSTR_I",
+                "EAST_CLSTR_I",
+                "SOUTH_CLSTR_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "NORTH_CLSTR_O",
+                "WEST_CLSTR_O",
+                "EAST_CLSTR_O",
+                "SOUTH_CLSTR_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "PE_R2": {
+            "CONNECTIONS": {
+                "FU0.DP0_T": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.WP0",
+                    "THIS.WP1"
+                ],
+                "RF0.RP0": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "RF0.RP1": [
+                    "THIS.NORTH_O",
+                    "THIS.EAST_O",
+                    "THIS.WEST_O",
+                    "THIS.SOUTH_O",
+                    "THIS.NORTH_CLSTR_O",
+                    "THIS.EAST_CLSTR_O",
+                    "THIS.WEST_CLSTR_O",
+                    "THIS.SOUTH_CLSTR_O",
+                    "THIS.DP0_I1",
+                    "THIS.DP0_I2",
+                    "THIS.DP0_P"
+                ],
+                "THIS.DP0_I1": [
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I1"
+                ],
+                "THIS.DP0_I2": [
+                    "FU0.DP0_I2",
+                    "FU0.DP0_I2"
+                ],
+                "THIS.DP0_P": [
+                    "FU0.DP0_P",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.EAST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.I1": [
+                    "FU0.DP0_I1"
+                ],
+                "THIS.I2": [
+                    "FU0.DP0_I2"
+                ],
+                "THIS.NORTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.NORTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.P": [
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.SOUTH_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_CLSTR_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WEST_I": [
+                    "RF0.WP0",
+                    "RF0.WP1",
+                    "FU0.DP0_I1",
+                    "FU0.DP0_I2",
+                    "FU0.DP0_P"
+                ],
+                "THIS.WP0": [
+                    "RF0.WP0"
+                ],
+                "THIS.WP1": [
+                    "RF0.WP1"
+                ]
+            },
+            "INPUTS": [
+                "NORTH_I",
+                "WEST_I",
+                "EAST_I",
+                "SOUTH_I",
+                "NORTH_CLSTR_I",
+                "WEST_CLSTR_I",
+                "EAST_CLSTR_I",
+                "SOUTH_CLSTR_I",
+                "I1",
+                "I2",
+                "P"
+            ],
+            "INTERNAL": [],
+            "INTERNALS": [
+                "WP0",
+                "WP1",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P",
+                "DP0_I1",
+                "DP0_I2",
+                "DP0_P"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "NORTH_O",
+                "WEST_O",
+                "EAST_O",
+                "SOUTH_O",
+                "NORTH_CLSTR_O",
+                "WEST_CLSTR_O",
+                "EAST_CLSTR_O",
+                "SOUTH_CLSTR_O",
+                "T"
+            ],
+            "REGS": [],
+            "SOCKETS": null,
+            "SUBMODS": {
+                "FU": [
+                    {
+                        "name": "FU0"
+                    }
+                ],
+                "RF": [
+                    {
+                        "name": "RF0"
+                    }
+                ]
+            },
+            "TSOCKETS": null
+        },
+        "RF": {
+            "CONNECTIONS": {
+                "THIS.R0": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R1": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R2": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.R3": [
+                    "THIS.RP0",
+                    "THIS.RP1"
+                ],
+                "THIS.WP0": [
+                    "THIS.R0",
+                    "THIS.R1",
+                    "THIS.R2",
+                    "THIS.R3"
+                ],
+                "THIS.WP1": [
+                    "THIS.R0",
+                    "THIS.R1",
+                    "THIS.R2",
+                    "THIS.R3"
+                ]
+            },
+            "INPUTS": [
+                "WP0",
+                "WP1"
+            ],
+            "ISOCKETS": null,
+            "OUTPUTS": [
+                "RP0",
+                "RP1"
+            ],
+            "REGS": [
+                "R0",
+                "R1",
+                "R2",
+                "R3"
+            ],
+            "SOCKETS": null,
+            "SUBMODS": null,
+            "TSOCKETS": null
+        }
+    }
+}
+TOP_ARCH :: end %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Parse CGRA begins:
+type=el.key():PE_MEM
+type=el.key():PE_R1
+type=el.key():PE_R2
+type=el.key():PE_MEM
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R1
+name = sm[name]:TILE_X0|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+op = ADD, old lat = 2, new lat = 1
+op = AND, old lat = 2, new lat = 1
+op = ARS, old lat = 2, new lat = 1
+op = BR, old lat = 2, new lat = 1
+op = CGT, old lat = 2, new lat = 1
+op = CLT, old lat = 2, new lat = 1
+op = CMERGE, old lat = 2, new lat = 1
+op = CMP, old lat = 2, new lat = 1
+op = DIV, old lat = 2, new lat = 1
+op = JUMPL, old lat = 2, new lat = 1
+op = LS, old lat = 2, new lat = 1
+op = MOVC, old lat = 2, new lat = 1
+op = MOVCL, old lat = 2, new lat = 1
+op = MUL, old lat = 2, new lat = 1
+op = NOP, old lat = 2, new lat = 1
+op = OLOAD, old lat = 2, new lat = 1
+op = OLOADB, old lat = 2, new lat = 1
+op = OLOADCL, old lat = 2, new lat = 1
+op = OLOADH, old lat = 2, new lat = 1
+op = OR, old lat = 2, new lat = 1
+op = OSTORE, old lat = 2, new lat = 1
+op = OSTOREB, old lat = 2, new lat = 1
+op = OSTOREH, old lat = 2, new lat = 1
+op = RS, old lat = 2, new lat = 1
+op = SELECT, old lat = 2, new lat = 1
+op = SEXT, old lat = 2, new lat = 1
+op = SUB, old lat = 2, new lat = 1
+op = XOR, old lat = 2, new lat = 1
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R2
+name = sm[name]:TILE_X0|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0
+type=el.key():PE_MEM
+type=el.key():PE_R1
+type=el.key():PE_R2
+type=el.key():PE_MEM
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T1
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1
+Parsing module  :: module name = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1
+Parsing module  :: module name = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T1
+Parsing module  :: module name = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y0|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_MEM_X0|_Y1|
+name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1
+Parsing module  :: module name = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1, type = PE_MEM
+Parsing module  :: module name = FU0, type = FU_MEM
+op = ADD, old lat = 1, new lat = 2
+op = AND, old lat = 1, new lat = 2
+op = ARS, old lat = 1, new lat = 2
+op = BR, old lat = 1, new lat = 2
+op = CGT, old lat = 1, new lat = 2
+op = CLT, old lat = 1, new lat = 2
+op = CMERGE, old lat = 1, new lat = 2
+op = CMP, old lat = 1, new lat = 2
+op = DIV, old lat = 1, new lat = 2
+op = JUMPL, old lat = 1, new lat = 2
+op = LS, old lat = 1, new lat = 2
+op = MOVC, old lat = 1, new lat = 2
+op = MOVCL, old lat = 1, new lat = 2
+op = MUL, old lat = 1, new lat = 2
+op = NOP, old lat = 1, new lat = 2
+op = OLOAD, old lat = 1, new lat = 2
+op = OLOADB, old lat = 1, new lat = 2
+op = OLOADCL, old lat = 1, new lat = 2
+op = OLOADH, old lat = 1, new lat = 2
+op = OR, old lat = 1, new lat = 2
+op = OSTORE, old lat = 1, new lat = 2
+op = OSTOREB, old lat = 1, new lat = 2
+op = OSTOREH, old lat = 1, new lat = 2
+op = RS, old lat = 1, new lat = 2
+op = SELECT, old lat = 1, new lat = 2
+op = SEXT, old lat = 1, new lat = 2
+op = SUB, old lat = 1, new lat = 2
+op = XOR, old lat = 1, new lat = 2
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R1
+name = sm[name]:TILE_X0|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R1_X1|_Y0|
+name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1, type = PE_R1
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+type=el.key():PE_R2
+name = sm[name]:TILE_X0|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1
+Parsing module  :: module name = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y0|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T1
+Parsing module  :: module name = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T1, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X0|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T1
+Parsing module  :: module name = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T1, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+name = sm[name]:TILE_X1|_Y1|_PE_R2_X1|_Y1|
+name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T1
+Parsing module  :: module name = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T1, type = PE_R2
+Parsing module  :: module name = FU0, type = FU
+Parsing module  :: module name = DP0, type = DP
+Parsing module  :: module name = RF0, type = RF
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X0|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X0|_Y1|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X1|_Y0|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y0|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X1|_Y1|_PE_R2_X1|_Y1|-T1
+dest mod str = TILE_X0|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_R1_X1|_Y0|-T1
+dest mod str = TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1
+Parsing JSON Success!!!
+EstablishTemporalLinkage started!.
+EstablishTemporalLinkage done!.
+Using II = 2
+number of ports: 1280 number of edge: 3515Timing analysis between PEs done.!
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=1
+PE1=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	PE2=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+Timing analysis between PE and closest memPE :: 
+PE=TILE_X0|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X0|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y0|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_R2_X1|_Y1|-T0	time_dist=0
+PE=TILE_X1|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+PE=TILE_X0|_Y1|_PE_R1_X1|_Y0|-T0	time_dist=0
+all supported pointers : 
+all required pointers : 
+SPMs are not modelled, therefore ignoring supported pointers check.
+inserting for : node=13,child:0
+Populate Rec Cycles!
+REC_CYCLE :: BE_Parent = 13
+REC_CYCLE :: BE_Child = 0
+REC_CYCLE :: BE_Parent's ancesotry : 
+11,12,0,1,2,13,REC_CYCLE :: Done!
+BE PARENT = 13,dist=3
+BE CHILD = 0
+Ancestory : 
+
+RecPHI inserted : 0
+BE PARENT = 13,dist=3
+BE CHILD = 0
+***********SORTED LIST*******************
+Node=11,ASAP=0
+Node=12,ASAP=1
+Node=0,ASAP=2
+Node=1,ASAP=3
+Node=2,ASAP=4
+Node=13,ASAP=5
+Node=9,ASAP=0
+Node=20019,ASAP=0
+Node=21,ASAP=0
+Node=20,ASAP=1
+Node=17,ASAP=3
+Node=16,ASAP=3
+Node=6,ASAP=4
+Node=4,ASAP=4
+Node=7,ASAP=5
+Node=20018,ASAP=5
+Node=10,ASAP=6
+Node=15,ASAP=7
+Node=14,ASAP=7
+Node=8,ASAP=8
+Node=5,ASAP=9
+Opening congestion file : DFG.xmlstdnoc_2x2tiles_2x2PEs.json_MTP=1_II=2.congestion.info!
+Opening mapping csv file : DFG.xmlstdnoc_2x2tiles_2x2PEs.json_MTP=1_Iter=0.mapping.csv
+Opening routeInfo log file : DFG.xmlstdnoc_2x2tiles_2x2PEs.json_MTP=1_Iter=0.routeInfo.log
+MAP begin...
+current node = 11,op = LOADB,unmapped nodes = 20,mapped nodes = 0,freeMemNodes = 16,unmappedMemNodes = 5,II = 2,btCredits = 0,CGRA=stdnoc_2x2tiles_2x2PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+Candidate Dests = 16
+getlatMinStartsPHI
+getLatCandDests
+modifyMaxLatCandDest
+getMaxLatencyBE started!
+NODE ASAP = 0
+getMaxLatencyBE done!
+MaxLat = 100000000
+IsMEMOp = 1
+candDestIn size = 16
+Candidate Dests = 16
+iteration:0
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T0,cost=44250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T0,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T0,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0,cost=42250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T0,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T0,cost=44250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T0,cost=42250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T0,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y0|_PE_MEM_X0|_Y0|-T1,cost=44250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y0|_PE_MEM_X0|_Y1|-T1,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y0|_PE_MEM_X0|_Y0|-T1,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T1,cost=42250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y1|_PE_MEM_X0|_Y0|-T1,cost=43250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X0|_Y1|_PE_MEM_X0|_Y1|-T1,cost=44250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y1|_PE_MEM_X0|_Y0|-T1,cost=42250
+
+Next candidate destination:
+path from parent Exist::
+TILE_X1|_Y1|_PE_MEM_X0|_Y1|-T1,cost=43250
+route estimation done...
+estimatedRouteInfo[node].size = 16
+Route begin...
+alreadyMappedChilds = 0
+Already Mapped child Routes....
+
+node=11,op=LOADB is mapped to TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0,lat=0
+routing info ::
+routing info done.
+assigning node=11,to=TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0,starting t=0
+op_lat = 2,nextPE = TILE_X1|_Y0|_PE_MEM_X0|_Y1|-T0
+mappingLog4=11,2,1,0
+Route success...
+current node = 12,op = CMERGE,unmapped nodes = 19,mapped nodes = 1,freeMemNodes = 15,unmappedMemNodes = 4,II = 2,btCredits = 0,CGRA=stdnoc_2x2tiles_2x2PEs.json,MaxHops=4,BB = _0_0,mutexPathEn = 1,Iter = 0
+Candidate Dests = 31
+getlatMinStartsPHI
+getlatMinStartsPHI :: minLat = 2
+getLatCandDests
+modifyMaxLatCandDest
+getMaxLatencyBE started!
+NODE ASAP = 1
+getMaxLatencyBE done!
+MaxLat = 100000000
+IsMEMOp = 0
+candDestIn size = 31
+Candidate Dests = 31
+iteration:0

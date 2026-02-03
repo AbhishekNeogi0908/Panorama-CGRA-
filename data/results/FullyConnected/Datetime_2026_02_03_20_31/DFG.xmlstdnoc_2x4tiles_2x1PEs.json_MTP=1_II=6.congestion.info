@@ -1,0 +1,33 @@
+**********************************
+II = 6,iter = 0
+**********************************
+CONGESTION:CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP0,20|BB=.preheader_0_1,29|BB=.preheader.preheader
+CONGESTION:CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP0,20|BB=.preheader_0_1,29|BB=.preheader.preheader
+HISTORY_COST :: CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP0,11000
+****************************************
+Upperbound II = 7
+On iter = 0
+****************************************
+
+noConflicts!
+**********************************
+II = 6,iter = 1
+**********************************
+HISTORY_COST :: CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP0,11000
+CONGESTION:CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP1,20|BB=.preheader_0_1,29|BB=.preheader.preheader
+CONGESTION:CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP1,20|BB=.preheader_0_1,29|BB=.preheader.preheader
+HISTORY_COST :: CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP1,11000
+
+noConflicts!
+**********************************
+II = 6,iter = 2
+**********************************
+HISTORY_COST :: CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP0,11000
+HISTORY_COST :: CGRA_Ins.TILE_X1|_Y3|_PE_MEM_X0|_Y0|-T0.RF0.RP1,11000
+****************************************
+Upperbound II = 6
+On iter = 2
+****************************************
+
+noCongestion!
+noConflicts!

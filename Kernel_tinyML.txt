@@ -13,10 +13,17 @@ void ReluQuantized(int lower,int output_data[IMAGE_SIZE]) {
 
 }
 
-For IMAGE_SIZE = 20 (k=20), II = 4, Latency = 17, Time measured = 10.1865seconds
-Total execution time   = (k-1)*II + L
-			= 93 cycles  
+2x2tile_2x2PEs : 
+(check "Datetime_2026_02_03_17_37" or next:)
+    Latency = 18
+    II = 4
+    Time measured = 10.5356seconds.
 
+ 2x4tile_2x1PEs : 
+ (check "Datetime_2026_02_03_19_03" or next:)
+    Latency = 15
+    II = 4
+    Time measured = 7.99596seconds.
 ------------------------------------------------------------------------------------
 2)Relu6Quantized :- Done
 
@@ -29,31 +36,49 @@ Total execution time   = (k-1)*II + L
      }
 
  }
-For IMAGE_SIZE = 20 (k=20), II = 4, Latency = 20, Time measured = 16.1888sec
-Total execution time   = (k-1)*II + L
-			= 96 cycles  
-------------------------------------------------------------------------------------
-3)LeakyRelu :- Done
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_17_34" or next:)
+    Latency = 18
+    II = 4
+    Time measured = 13.5335seconds.
 
-void LeakyReluInt(int alpha, int scale,  int output_data[], int size) {
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_19_07" or next, Open csv file name MTP=1_ITTR=1)
+    Latency = 20
+    II = 4
+    Time measured = 23.1383seconds.
+ 
+------------------------------------------------------------------------------------
+3)LeakyRelu :- Done Latency 17 (0 to 16)
+
+void LeakyRelu(int alpha, int scale,  int output_data[IMAGE_SIZE]) {
      int out;
-	 for (int i = 0; i < size; ++i) {
+	//int output_value[IMAGE_SIZE];
+	for (int i = 0; i < SIZE; ++i) {
+		#ifdef CGRA_COMPILER
+		please_map_me(); 
+		#endif
          int val = input_data[i];
-         if (val > 0) {
-             out = val;
-         } else {
-             out = (val * alpha);
-         }
+		if (val > 0) {out = val;}
+		else {out = (val * alpha);}
          output_data[i]=out;
      }
 
  }
- 
-For IMAGE_SIZE = 20 (k=20), II = 4, Latency = 16, Time measured = 8.74868sec
-Total execution time   = (k-1)*II + L
-			= 92 cycles 
+
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_17_27" or next:)
+    Latency = 17
+    II = 4
+    Time measured = 9.06321seconds.
+
+2x4tile_2x4PEs :
+(check "Datetime_2026_02_03_19_20" or next, Open csv file name MTP=1_Iter=0)
+    Latency = 16
+    II = 4
+    Time measured = 7.49683seconds.
 -------------------------------------------------------------------------------------
-4)AffineQuantize :- Done
+4)AffineQuantize :- Not working
 
 
 void AffineQuantize(int zero_point, int scale, int output_data[], int size,int min_val,int max_val) {
@@ -77,44 +102,58 @@ void AffineQuantize(int zero_point, int scale, int output_data[], int size,int m
 }
 NOTE : The dfggenpass cannot handle such complex calc. of unclamped. Hence calculate separetly in another for loop
 
-For IMAGE_SIZE = 20 (k=20), II = 4, Latency = 7, Time measured = 3.42587sec
-Total execution time   = (k-1)*II + L
-			= 83 cycles 
-
-
 Kernels without if-else
 =======================
---------------------------------------------------------------------------------
 5)Dequantize :- Done
-
+------------
 void Dequantize(int flat_size,int output_data[MAX_ARRAY_SIZE],int zero_point, int scale) {
     for (int i = 0; i < flat_size; i++) {
              output_data[i] = (scale * (input_data[i] - zero_point) );
 
     }
 }
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_17_10" or next:)
+    Latency = 15
+    II = 4
+    Time measured = 8.37463seconds.
 
-For IMAGE_SIZE = 20 (k=20), II = 4, Latency = 12, Time measured = 7.58268sec
-Total execution time   = (k-1)*II + L
-			= 88 cycles 
+2x4tile_2x4PEs :
+(check "Datetime_2026_02_03_19_23" or next, Open csv file name MTP=1_Iter=0)
+    Latency = 12
+    II = 4
+    Time measured = 5.45496seconds.
 
--------------------------------------------------------------------------------
-6)MatrixVectorMultiply :- DONE :- Declare the result array within the function and not in function argument
+6)MatrixVectorMultiply :- 
 
-void MatrixVectorMultiply(int num_filters,int result[MAX_NUM_FILTERS]) {
-     for (int j = 0; j < num_filters; ++j) {
-         int dot_prod = 0;  
-         for (int k = 0; k < INPUT_SIZE; ++k) {
-             dot_prod += matrix[j][k] * vector[k];
-         }
-         result[j] = dot_prod;  
+----------------------
+void MVM(int num_filters, int result[MAX_NUM_FILTERS]) {
+    for (int j = 0; j < MAX_NUM_FILTERS; ++j) {
+        int dot_prod = 0;
+        for (int k = 0; k < INPUT_SIZE; ++k) {
+            #ifdef CGRA_COMPILER
+            please_map_me(); 
+            #endif
+            
+            dot_prod += matrix[j][k] * vector[k];
+        }
+        result[j] = dot_prod;
+    }
+}
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_19_40" or next:) 
+    Latency = 14
+    II = 5
+    Time measured = 12.8364seconds.
 
-     }
- }
+2x4tile_2x4PEs :
+(check "Datetime_2026_02_03_19_42" or next, Open csv file name MTP=1_Iter=0)
+    Latency = 15
+    II = 5
+    Time measured = 13.6292seconds.
 
------------------------------------------------------------------------------
 7)PortableCwiseMul :- Done
-
+------------------
 void PortableCwiseMul( int shift, int output[]) {
    for (int i = 0; i < FLAT_SIZE; ++i) {
        int a = input_1[i];
@@ -123,49 +162,72 @@ void PortableCwiseMul( int shift, int output[]) {
        output[i] = value >> shift; 
    }
  }
+check "Datetime_2026_02_03_16_54" or next:
+    2x2tile_2x2PEs : 
+    Latency = 14
+    II = 4
+    Time measured = 7.14251seconds.
+2x4tile_2x4PEs :
+(check "Datetime_2026_02_03_19_51" or next, Open csv file name MTP=1_Iter=0)
+    Latency = 13
+    II = 4
+    Time measured = 7.33898seconds.
 
-For FLAT_SIZE = 20 (k=20), II = 4, Latency = 14, Time measured = 8.23038sec
-Total execution time   = (k-1)*II + L
-			= 90 cycles 
-------------------------------------------------------------------------			
-			
-8)FullyConnected :- 
+8)FullyConnected :- Module.cpp:517: CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
+
 -----------------
 void FullyConnected(
-     const int input_offset, const int filter_offset, const int output_offset,
-     const int output_multiplier, const int output_shift,
-     const int output_activation_min, const int output_activation_max,
-     const int input_size,  const int output_depth, const int accum_depth,
-     const int bias_data, int* output_data) {
+    const int input_offset, const int filter_offset, const int output_offset,
+    const int output_multiplier, const int output_shift,
+    const int output_activation_min, const int output_activation_max,
+    const int input_size,  const int output_depth, const int accum_depth,
+    const int bias_data, int* output_data) {
 
+    for (int out_c = 0; out_c < output_depth; ++out_c) {
+        int acc = 0;
 
- 
-     for (int out_c = 0; out_c < output_depth; ++out_c) {
-         int acc = 0;
-         for (int d = 0; d < accum_depth; ++d) {
-             int input_val = input_data[d];
-             int filter_val = filter_data[out_c][d];
-             acc += (filter_val + filter_offset) * (input_val + input_offset);
-         }
+        for (int d = 0; d < accum_depth; ++d) {
+            int input_val = input_data[d];
+            int filter_val = filter_data[out_c][d];
 
+            #ifdef CGRA_COMPILER
+            please_map_me();
+            #endif
 
-             acc += bias_data;
-             int reduced_multiplier = (output_multiplier + (1 << 15)) >> 16;
-             int total_shift = 15 - output_shift;
-             acc = (int)acc * (int)reduced_multiplier + ((int)1 << (total_shift - 1));
-             acc >>= total_shift;
-             acc += output_offset;
+            acc += (filter_val + filter_offset) * (input_val + input_offset);
+        }
 
-         int min_diff = acc - output_activation_min;
-         int max_diff = output_activation_max - acc;
-         acc = acc + (min_diff & (min_diff >> 31)) + (max_diff & (max_diff >> 31));
-         output_data[out_c] = acc;
-     }
+        acc += bias_data;
 
+        int reduced_multiplier = (output_multiplier + (1 << 15)) >> 16;
+        int total_shift = 15 - output_shift;
 
- }
+        acc = acc * reduced_multiplier + (1 << (total_shift - 1));
+        acc >>= total_shift;
+        acc += output_offset;
 
-9)PortableMatrixScalarAccumulate :- Done
+        /* Activation clamp */
+        int min_diff = acc - output_activation_min;
+        int max_diff = output_activation_max - acc;
+        acc = acc + (min_diff & (min_diff >> 31)) + (max_diff & (max_diff >> 31));
+
+        output_data[out_c] = acc;
+    }
+}
+
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_03_16_45" or next:)
+    Latency = 18
+    II = 6
+    Time measured = 49.7181seconds.
+
+2x4tile_2x1PEs :
+(check "Datetime_2026_02_03_19_58" or next, Open csv file name MTP=1_Iter=2)
+    Latency = 20
+    II = 6
+    Time measured = 119.05seconds.
+
+9)PortableMatrixScalarAccumulate :- 
 ---------------------------------
  void PortableMatrixScalarMultiplyAccumulate(
                                              int scalar, int n_row,
@@ -180,7 +242,21 @@ void FullyConnected(
      }
  }
 
-10)Matmul :- Done
+2x2tile_2x2PEs : 
+(check "Datetime_2026_02_03_16_26" or next:)
+
+    Latency = 11
+    II = 4
+    Time measured = 4.62547seconds
+
+2x4tile_2x1PEs : 
+(check "Datetime_2026_02_03_20_04" or next:)
+    Latency = 10
+    II = 4
+    Time measured = 7.62482seconds.
+
+
+10)Matmul :- 
 ----------
 void MatMul(const int lhs_rows, const int lhs_cols,
              const int rhs_rows, const int rhs_cols,
@@ -198,4 +274,17 @@ void MatMul(const int lhs_rows, const int lhs_cols,
      }
 
  }
- 
+
+2x2tile_2x2PEs :
+Check "Datetime_2026_02_03_16_28" or next one 
+    Latency = 13 
+    II = 5
+    Time measured = 14.5323seconds.
+
+2x4tile_2x1PEs : 
+(check "Datetime_2026_02_03_20_11" or next:)
+    Latency = 16
+    II = 5
+    Time measured = 18.6049seconds.
+
+

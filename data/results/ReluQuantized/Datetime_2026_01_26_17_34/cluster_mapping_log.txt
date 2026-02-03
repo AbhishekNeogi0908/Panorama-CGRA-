@@ -1,0 +1,153 @@
+2
+1
+Number of cluster nodes: 2
+Number of cluster edges: 1
+DFG nodes in each cluster:
+0 9
+1 12
+Number of dfg nodes: 21
+Number of cgra clusters: 8
+Number of dfg nodes per cgra cluster: 2
+Set parameter Username
+Set parameter LicenseID to value 2757208
+Academic license - for non-commercial use only - expires 2026-12-21
+Objective 9: -10.0 + 9.0 v0 + 12.0 v1
+initial constr
+[]
+Node ID: 0
+[]
+[<gurobi.Var v0>, <gurobi.Var v1>]
+Node ID: 1
+[0, 1]
+[<gurobi.Var v0>, <gurobi.Var v1>]
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 2 rows, 3 columns and 6 nonzeros
+Model fingerprint: 0x33544a4a
+Variable types: 1 continuous, 2 integer (2 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 1e+01]
+Found heuristic solution: objective 10.0000000
+Presolve removed 2 rows and 3 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 1 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+00, best bound 1.000000000000e+00, gap 0.0000%
+Found a solution at C1,C2  :  1 1
+v0 1
+0
+v1 0
+x_ 1
+Obj: 1
+Constraint List: [<gurobi.Constr R0>, <gurobi.Constr R1>]
+Number of Constraints: 2
+Objective 9: -10.0 + 12.0 v1
+initial constr
+[]
+Node ID: 0
+Node ID: 1
+[]
+[<gurobi.Var v1>]
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 2 rows, 2 columns and 4 nonzeros
+Model fingerprint: 0x664aa617
+Variable types: 1 continuous, 1 integer (1 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 1e+01]
+Found heuristic solution: objective 10.0000000
+Presolve removed 2 rows and 2 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 2: 2 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.000000000000e+00, best bound 2.000000000000e+00, gap 0.0000%
+Found a solution at C1,C2  :  1 1
+v1 1
+1
+x_ 2
+Obj: 2
+Constraint List: [<gurobi.Constr R0>, <gurobi.Constr R1>]
+Number of Constraints: 2
+node,row 0 0
+node,row 1 1
+Objective 14: 2.0 v11 + -2.0 v01 + 4.0 v12 + -4.0 v02 + 6.0 v13 + -6.0 v03 + 8.0 v14 + -8.0 v04
+how many cgra clusters one node should map?
+Constraint 15: <gurobi.TempConstr: v01 + v02 + v03 + v04 == 4>
+Constraint 15: <gurobi.TempConstr: v11 + v12 + v13 + v14 == 4>
+how many nodes one cgra cluster can have?
+Constraint 16: <gurobi.TempConstr: v01 >= 1>
+Constraint 16: <gurobi.TempConstr: v11 >= 1>
+Constraint 16: <gurobi.TempConstr: v02 >= 1>
+Constraint 16: <gurobi.TempConstr: v12 >= 1>
+Constraint 16: <gurobi.TempConstr: v03 >= 1>
+Constraint 16: <gurobi.TempConstr: v13 >= 1>
+Constraint 16: <gurobi.TempConstr: v04 >= 1>
+Constraint 16: <gurobi.TempConstr: v14 >= 1>
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 12 rows, 9 columns and 34 nonzeros
+Model fingerprint: 0x226eb63d
+Variable types: 1 continuous, 8 integer (8 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 4e+00]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+m.status: 2
+Obj: 0
+<gurobi.Var v01 (value 1.0)> 1.0
+<gurobi.Var v02 (value 1.0)> 1.0
+<gurobi.Var v03 (value 1.0)> 1.0
+<gurobi.Var v04 (value 1.0)> 1.0
+<gurobi.Var v11 (value 1.0)> 1.0
+<gurobi.Var v12 (value 1.0)> 1.0
+<gurobi.Var v13 (value 1.0)> 1.0
+<gurobi.Var v14 (value 1.0)> 1.0
+node: (row,col) 0 0 4
+node: (row,col) 1 1 4
+[0]	[0]	[0]	[0]	
+[1]	[1]	[1]	[1]	
+DFG nodes in each cluster:
+0 9
+1 12
+(C1_init,C2_init): 1 1
+DFG cluster to CGRA cluster Mapping:
+Cluster ID	[Rows]	[Cols]
+0	[0, 0, 0, 0]	[0, 1, 2, 3]
+1	[1, 1, 1, 1]	[0, 1, 2, 3]

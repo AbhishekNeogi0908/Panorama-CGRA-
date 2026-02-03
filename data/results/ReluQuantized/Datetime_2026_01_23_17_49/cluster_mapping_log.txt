@@ -1,0 +1,132 @@
+4
+5
+Number of cluster nodes: 4
+Number of cluster edges: 5
+DFG nodes in each cluster:
+0 7
+1 3
+2 3
+3 8
+Number of dfg nodes: 21
+Number of cgra clusters: 2
+Number of dfg nodes per cgra cluster: 10
+Set parameter Username
+Set parameter LicenseID to value 2757208
+Academic license - for non-commercial use only - expires 2026-12-21
+Objective 9: -21.0 + 7.0 v0 + 3.0 v1 + 3.0 v2 + 8.0 v3
+initial constr
+[]
+Node ID: 0
+[3, 0]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 1
+[3, 1]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 2
+[3, 2]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Node ID: 3
+[2, 3, 0, 3]
+[<gurobi.Var v0>, <gurobi.Var v1>, <gurobi.Var v2>, <gurobi.Var v3>]
+Constraint 12: <gurobi.TempConstr: v2 + v3 + v0 + v3 <= 1.0 + 100000.0 v3>
+Constraint 13: <gurobi.TempConstr: v2 + v3 + v0 + v3 >= -99997.0 + 100000.0 v3>
+
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 4 rows, 5 columns and 16 nonzeros
+Model fingerprint: 0xb0b43df0
+Variable types: 1 continuous, 4 integer (4 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+05]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+Found a solution at C1,C2  :  1 1
+v0 1
+0
+v1 1
+1
+v2 1
+2
+v3 1
+3
+x_ 0
+Obj: 0
+Constraint List: [<gurobi.Constr R0>, <gurobi.Constr R1>, <gurobi.Constr R2>, <gurobi.Constr R3>]
+Number of Constraints: 4
+node,row 0 0
+node,row 1 0
+node,row 2 0
+node,row 3 0
+Objective 14: v01 + -1.0 v31 + 2.0 v02 + -2.0 v32 + v11 + -1.0 v31 + 2.0 v12 + -2.0 v32 + v21 + -1.0 v31 + 2.0 v22 + -2.0 v32 + v31 + -1.0 v21 + 2.0 v32 + -2.0 v22 + v31 + -1.0 v01 + 2.0 v32 + -2.0 v02
+how many cgra clusters one node should map?
+Constraint 15: <gurobi.TempConstr: v01 + v02 == 1>
+Constraint 15: <gurobi.TempConstr: v11 + v12 == 1>
+Constraint 15: <gurobi.TempConstr: v21 + v22 == 1>
+Constraint 15: <gurobi.TempConstr: v31 + v32 == 1>
+how many nodes one cgra cluster can have?
+Constraint 16: <gurobi.TempConstr: v01 + v11 + v21 + v31 >= 1>
+Constraint 16: <gurobi.TempConstr: v02 + v12 + v22 + v32 >= 1>
+Gurobi Optimizer version 11.0.3 build v11.0.3rc0 (linux64 - "Ubuntu 20.04.6 LTS")
+
+CPU model: Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 8 rows, 9 columns and 26 nonzeros
+Model fingerprint: 0x0b2f17ef
+Variable types: 1 continuous, 8 integer (8 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Presolve removed 8 rows and 9 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 16 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+m.status: 2
+Obj: 0
+<gurobi.Var v01 (value 1.0)> 1.0
+<gurobi.Var v02 (value 0.0)> 0.0
+<gurobi.Var v11 (value 0.0)> 0.0
+<gurobi.Var v12 (value 1.0)> 1.0
+<gurobi.Var v21 (value 0.0)> 0.0
+<gurobi.Var v22 (value 1.0)> 1.0
+<gurobi.Var v31 (value 0.0)> 0.0
+<gurobi.Var v32 (value 1.0)> 1.0
+node: (row,col) 0 0 1
+node: (row,col) 1 0 2
+node: (row,col) 2 0 2
+node: (row,col) 3 0 2
+[0]	[1, 2, 3]	
+DFG nodes in each cluster:
+0 7
+1 3
+2 3
+3 8
+(C1_init,C2_init): 1 1
+DFG cluster to CGRA cluster Mapping:
+Cluster ID	[Rows]	[Cols]
+0	[0]	[0]
+1	[0]	[1]
+2	[0]	[1]
+3	[0]	[1]

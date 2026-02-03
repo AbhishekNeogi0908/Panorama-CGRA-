@@ -1,0 +1,5 @@
+strict digraph {
+0 [label=9, color=red];
+1 [label=12, color=green];
+1 -> 0 [label=2];
+}

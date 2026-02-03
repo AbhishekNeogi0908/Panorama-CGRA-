@@ -1,0 +1,56 @@
+current node = 19,op = LOADB,unmapped nodes = 27,mapped nodes = 0,freeMemNodes = 32,unmappedMemNodes = 6,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 32
+current node = 20,op = CMERGE,unmapped nodes = 26,mapped nodes = 1,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = _0_0,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 40
+current node = 0,op = SELECT,unmapped nodes = 25,mapped nodes = 2,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 49
+current node = 1,op = ADD,unmapped nodes = 24,mapped nodes = 3,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 4
+current node = 2,op = CMP,unmapped nodes = 23,mapped nodes = 4,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 4
+current node = 21,op = CMERGE,unmapped nodes = 22,mapped nodes = 5,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = _0_1,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 3
+current node = 8,op = OLOAD,unmapped nodes = 21,mapped nodes = 6,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 58
+current node = 16,op = OLOAD,unmapped nodes = 20,mapped nodes = 7,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 57
+current node = 20029,op = MOVC,unmapped nodes = 19,mapped nodes = 8,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 56
+current node = 31,op = MOVC,unmapped nodes = 18,mapped nodes = 9,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 55
+current node = 30,op = STOREB,unmapped nodes = 17,mapped nodes = 10,freeMemNodes = 31,unmappedMemNodes = 5,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 15
+current node = 26,op = LS,unmapped nodes = 16,mapped nodes = 11,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 41
+current node = 25,op = LS,unmapped nodes = 15,mapped nodes = 12,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 40
+current node = 24,op = LS,unmapped nodes = 14,mapped nodes = 13,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 39
+current node = 9,op = ADD,unmapped nodes = 13,mapped nodes = 14,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 35
+current node = 6,op = ADD,unmapped nodes = 12,mapped nodes = 15,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 32
+current node = 4,op = ADD,unmapped nodes = 11,mapped nodes = 16,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 32
+current node = 10,op = LOAD,unmapped nodes = 10,mapped nodes = 17,freeMemNodes = 30,unmappedMemNodes = 4,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 18
+current node = 20028,op = STOREB,unmapped nodes = 9,mapped nodes = 18,freeMemNodes = 29,unmappedMemNodes = 3,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 22
+current node = 11,op = CLT,unmapped nodes = 8,mapped nodes = 19,freeMemNodes = 28,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 28
+current node = 15,op = CGT,unmapped nodes = 7,mapped nodes = 20,freeMemNodes = 28,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 27
+current node = 12,op = XOR,unmapped nodes = 6,mapped nodes = 21,freeMemNodes = 27,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 29
+current node = 13,op = OR,unmapped nodes = 5,mapped nodes = 22,freeMemNodes = 27,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 19
+current node = 23,op = CMERGE,unmapped nodes = 4,mapped nodes = 23,freeMemNodes = 27,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = _1027_1,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 28
+current node = 22,op = CMERGE,unmapped nodes = 3,mapped nodes = 24,freeMemNodes = 27,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = _1027_0,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 27
+current node = 7,op = STORE,unmapped nodes = 2,mapped nodes = 25,freeMemNodes = 26,unmappedMemNodes = 2,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 16
+current node = 1027,op = SELECT,unmapped nodes = 1,mapped nodes = 26,freeMemNodes = 25,unmappedMemNodes = 1,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = _5_0,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 16
+current node = 5,op = STORE,unmapped nodes = 0,mapped nodes = 27,freeMemNodes = 24,unmappedMemNodes = 1,II = 4,btCredits = 0,CGRA=stdnoc_2x4tiles_2x1PEs.json,MaxHops=4,BB = ,mutexPathEn = 1,Iter = 0
+estimatedRouteInfo[node].size = 8
