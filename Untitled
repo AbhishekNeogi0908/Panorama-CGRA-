@@ -1,2 +1,0 @@
-/ FIX: Use the constant MAX_ARRAY_SIZE instead of a variable parameter
-    // This prevents the 'CMERGE' assertion failure in the DFG Generator

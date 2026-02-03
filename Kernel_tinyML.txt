@@ -10,7 +10,6 @@ void ReluQuantized(int lower,int output_data[IMAGE_SIZE]) {
         output_data[i] = (input_data[i] < lower) ? lower : input_data[i];
      }
 
-
 }
 
 2x2tile_2x2PEs : 
@@ -18,12 +17,17 @@ void ReluQuantized(int lower,int output_data[IMAGE_SIZE]) {
     Latency = 18
     II = 4
     Time measured = 10.5356seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  94cc
 
  2x4tile_2x1PEs : 
  (check "Datetime_2026_02_03_19_03" or next:)
     Latency = 15
     II = 4
     Time measured = 7.99596seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  91cc
+
 ------------------------------------------------------------------------------------
 2)Relu6Quantized :- Done
 
@@ -41,12 +45,18 @@ void ReluQuantized(int lower,int output_data[IMAGE_SIZE]) {
     Latency = 18
     II = 4
     Time measured = 13.5335seconds.
+    Total execution time = (k-1)*II + L, Here K = 3 (innermost loop itteration)
+    			=  94cc
+
 
 2x2tile_2x2PEs :
 (check "Datetime_2026_02_03_19_07" or next, Open csv file name MTP=1_ITTR=1)
     Latency = 20
     II = 4
     Time measured = 23.1383seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  96cc
+
  
 ------------------------------------------------------------------------------------
 3)LeakyRelu :- Done Latency 17 (0 to 16)
@@ -71,12 +81,18 @@ void LeakyRelu(int alpha, int scale,  int output_data[IMAGE_SIZE]) {
     Latency = 17
     II = 4
     Time measured = 9.06321seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  93cc
+
 
 2x4tile_2x4PEs :
 (check "Datetime_2026_02_03_19_20" or next, Open csv file name MTP=1_Iter=0)
     Latency = 16
     II = 4
     Time measured = 7.49683seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  92cc
+
 -------------------------------------------------------------------------------------
 4)AffineQuantize :- Not working
 
@@ -101,6 +117,23 @@ void AffineQuantize(int zero_point, int scale, int output_data[], int size,int m
 
 }
 NOTE : The dfggenpass cannot handle such complex calc. of unclamped. Hence calculate separetly in another for loop
+2x2tile_2x2PEs :
+(check "Datetime_2026_02_04_00_39" or next:)
+    Latency = 24
+    II = 4
+    Time measured = 6.78339seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  100cc
+
+
+2x4tile_2x4PEs :
+(check "Datetime_2026_02_04_00_40" or next, Open csv file name MTP=1_Iter=0)
+    Latency = 22
+    II = 4
+    Time measured = 4.94133seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  98cc
+
 
 Kernels without if-else
 =======================
@@ -117,12 +150,18 @@ void Dequantize(int flat_size,int output_data[MAX_ARRAY_SIZE],int zero_point, in
     Latency = 15
     II = 4
     Time measured = 8.37463seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  91cc
+
 
 2x4tile_2x4PEs :
 (check "Datetime_2026_02_03_19_23" or next, Open csv file name MTP=1_Iter=0)
     Latency = 12
     II = 4
     Time measured = 5.45496seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  88cc
+
 
 6)MatrixVectorMultiply :- 
 
@@ -145,15 +184,21 @@ void MVM(int num_filters, int result[MAX_NUM_FILTERS]) {
     Latency = 14
     II = 5
     Time measured = 12.8364seconds.
+    Total execution time = (k-1)*II + L, Here K = 4 (innermost loop itteration)
+    			=  29cc
+
 
 2x4tile_2x4PEs :
 (check "Datetime_2026_02_03_19_42" or next, Open csv file name MTP=1_Iter=0)
     Latency = 15
     II = 5
     Time measured = 13.6292seconds.
+    Total execution time = (k-1)*II + L, Here K = 4 (innermost loop itteration)
+    			=  30cc
+
 
 7)PortableCwiseMul :- Done
-------------------
+----------------------------------------------------------------------------------------
 void PortableCwiseMul( int shift, int output[]) {
    for (int i = 0; i < FLAT_SIZE; ++i) {
        int a = input_1[i];
@@ -167,15 +212,19 @@ check "Datetime_2026_02_03_16_54" or next:
     Latency = 14
     II = 4
     Time measured = 7.14251seconds.
+    Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  90cc
+
 2x4tile_2x4PEs :
 (check "Datetime_2026_02_03_19_51" or next, Open csv file name MTP=1_Iter=0)
     Latency = 13
     II = 4
     Time measured = 7.33898seconds.
+Total execution time = (k-1)*II + L, Here K = 20 (innermost loop itteration)
+    			=  89cc
 
-8)FullyConnected :- Module.cpp:517: CGRAXMLCompile::Port* CGRAXMLCompile::Module::getInPort(std::string): Assertion `false' failed.
-
------------------
+8)FullyConnected :- 
+------------------------------------------------------------------------
 void FullyConnected(
     const int input_offset, const int filter_offset, const int output_offset,
     const int output_multiplier, const int output_shift,
@@ -220,12 +269,16 @@ void FullyConnected(
     Latency = 18
     II = 6
     Time measured = 49.7181seconds.
+	Total execution time = (k-1)*II + L, Here K = 8 (innermost loop itteration)
+    			=  60cc
 
 2x4tile_2x1PEs :
 (check "Datetime_2026_02_03_19_58" or next, Open csv file name MTP=1_Iter=2)
     Latency = 20
     II = 6
     Time measured = 119.05seconds.
+Total execution time = (k-1)*II + L, Here K = 8 (innermost loop itteration)
+    			=  62cc
 
 9)PortableMatrixScalarAccumulate :- 
 ---------------------------------
@@ -248,12 +301,16 @@ void FullyConnected(
     Latency = 11
     II = 4
     Time measured = 4.62547seconds
+	Total execution time = (k-1)*II + L, Here K = 3 (innermost loop itteration)
+    			=  23cc
 
 2x4tile_2x1PEs : 
 (check "Datetime_2026_02_03_20_04" or next:)
     Latency = 10
     II = 4
     Time measured = 7.62482seconds.
+	Total execution time = (k-1)*II + L, Here K = 4 (innermost loop itteration)
+    			=  22cc
 
 
 10)Matmul :- 
@@ -280,11 +337,15 @@ Check "Datetime_2026_02_03_16_28" or next one
     Latency = 13 
     II = 5
     Time measured = 14.5323seconds.
+    Total execution time = (k-1)*II + L, Here K = 3 (innermost loop itteration)
+    			=  23cc
 
 2x4tile_2x1PEs : 
 (check "Datetime_2026_02_03_20_11" or next:)
     Latency = 16
     II = 5
     Time measured = 18.6049seconds.
+	Total execution time = (k-1)*II + L, Here K = 3 (innermost loop itteration)
+    			=  26cc
 
 
