@@ -9,7 +9,7 @@ import datetime
 
 
 def main(application,target_function, cluster_algo, no_clusters,C1_init_, C2_init_, cgra_cluster_r, cgra_cluster_c, arch_desc, maxIter,skip_inter_or_intra, open_set_limit, entry_id,summary_log,initII,maxIterTime):
-
+  application = "main"
   PANORAMA_HOME =  os.getcwd()	  
   DFG_GEN_HOME = PANORAMA_HOME + '/panorama_with_morpher/Morpher_DFG_Generator'
   # DFG_CLUSTRNG_HOME = PANORAMA_HOME + '/HiMap2_Cluster_Mapping'
